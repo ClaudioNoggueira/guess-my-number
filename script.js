@@ -43,3 +43,7 @@ document.getElementById(`checkButton`).addEventListener("click", () => {
   const guess = Number(numberEl.value);
   checkAnswer(guess);
 });
+
+document.getElementById(`reloadButton`).addEventListener(`click`, () => {
+  location.reload();
+});
