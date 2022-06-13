@@ -24,23 +24,23 @@
       <div class="relative">
         <h1 class="heading-primary center-text margin-bottom-medium">Guess My Number!</h1>
         <hr>
-        <div class="square center-text">?</div>
+        <div class="square center-text" id="secretNumber">?</div>
       </div>
 
       <div class="panel grid grid--2-cols">
         <div class="flex column">
-          <input class="margin-bottom-small" type="number" name="number" id="number" placeholder="???">
+          <input class="margin-bottom-small" type="number" name="number" id="number" placeholder="???" min="1" max="20">
           <button type="submit" class="btn" id="checkButton">Check!</button>
         </div>
 
         <div class="flex column">
-          <h2 class="heading-secondary margin-bottom-medium">Start guessing...</h2>
+          <h2 class="heading-secondary margin-bottom-medium" id="message">Start guessing...</h2>
           <div>
-            <strong>💯 Score: </strong><span id="score">0</span>
+            <strong>💯 Score: </strong><span id="score">20</span>
           </div>
 
           <div>
-            <strong>🥇 Highscore: </strong><span id="highscore">0</span>
+            <strong>🥇 Highest score: </strong><span id="highestScore">1</span>
           </div>
         </div>
       </div>
