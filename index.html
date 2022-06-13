@@ -11,8 +11,43 @@
 </head>
 
 <body>
-  <h1>Guess My Number!</h1>
-  <script src="script.js"></script>
+  <header>
+    <div class="container">
+      <nav class="flex">
+        <button class="btn" id="reloadButton">Again!</button>
+        <p>(Between 1 and 20)</p>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div class="relative">
+        <h1 class="heading-primary center-text margin-bottom-medium">Guess My Number!</h1>
+        <hr>
+        <div class="square center-text">?</div>
+      </div>
+
+      <div class="panel grid grid--2-cols">
+        <div class="flex column">
+          <input class="margin-bottom-small" type="number" name="number" id="number" placeholder="???">
+          <button type="submit" class="btn" id="checkButton">Check!</button>
+        </div>
+
+        <div class="flex column">
+          <h2 class="heading-secondary margin-bottom-medium">Start guessing...</h2>
+          <div>
+            <strong>💯 Score: </strong><span id="score">0</span>
+          </div>
+
+          <div>
+            <strong>🥇 Highscore: </strong><span id="highscore">0</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <script src="script.js"></script>
+  </main>
 </body>
 
 </html>
