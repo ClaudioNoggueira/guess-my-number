@@ -37,3 +37,9 @@ function setHighestScore(score) {
   highestScore = score;
   document.getElementById(`highestScore`).textContent = highestScore;
 }
+
+document.getElementById(`checkButton`).addEventListener("click", () => {
+  const numberEl = document.getElementById(`number`);
+  const guess = Number(numberEl.value);
+  checkAnswer(guess);
+});
