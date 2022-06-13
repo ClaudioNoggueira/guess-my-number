@@ -8,8 +8,16 @@ let finished = false;
 
 function checkAnswer(guess) {
   if (finished === false) {
-    guess === secretNumber ? rightAnswer() : wrongAnswer(guess);
+    !guess
+      ? noAnswer()
+      : guess === secretNumber
+      ? rightAnswer()
+      : wrongAnswer(guess);
   }
+}
+
+function noAnswer() {
+  document.getElementById(`message`).textContent = "⛔ No number!";
 }
 
 function rightAnswer() {
