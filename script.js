@@ -39,6 +39,13 @@ function wrongAnswer(guess) {
     guess < secretNumber ? `Too LOW.` : `Too HIGH.`;
 
   document.getElementById(`score`).textContent = score;
+
+  if (score === 0) looseGame();
+}
+
+function looseGame() {
+  finished = true;
+  document.getElementById(`message`).textContent = "💥 You lost.";
 }
 
 function setHighestScore(score) {
