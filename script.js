@@ -2,6 +2,7 @@ const secretNumber = Math.floor(Math.random() * 20) + 1;
 // console.log(`Secret number: ${secretNumber}`);
 
 let numberOfGuesses = 20;
+let highestScore = 1;
 
 let finished = false;
 
@@ -18,6 +19,8 @@ function rightAnswer() {
   document.getElementById(`message`).style.color = `green`;
 
   document.getElementById(`secretNumber`).textContent = secretNumber;
+
+  if (numberOfGuesses > highestScore) setHighestScore(numberOfGuesses);
 }
 
 function wrongAnswer(guess) {
@@ -28,4 +31,9 @@ function wrongAnswer(guess) {
     guess < secretNumber ? `Too LOW.` : `Too HIGH.`;
 
   document.getElementById(`score`).textContent = numberOfGuesses;
+}
+
+function setHighestScore(score) {
+  highestScore = score;
+  document.getElementById(`highestScore`).textContent = highestScore;
 }
