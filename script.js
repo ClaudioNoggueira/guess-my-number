@@ -7,36 +7,37 @@ let highestScore = Number(window.localStorage.getItem("highestScore")) || 1;
 let finished = false;
 
 function checkAnswer(guess) {
+  const messageEl = document.getElementById(`message`);
   if (finished === false) {
     !guess
-      ? noAnswer()
+      ? noAnswer(messageEl)
       : guess === secretNumber
-      ? rightAnswer()
-      : wrongAnswer(guess);
+      ? rightAnswer(messageEl)
+      : wrongAnswer(guess, messageEl);
   }
 }
 
-function noAnswer() {
-  document.getElementById(`message`).textContent = "⛔ No number!";
+function noAnswer(messageEl) {
+  messageEl.textContent = "⛔ No number!";
 }
 
-function rightAnswer() {
+function rightAnswer(messageEl) {
   finished = true;
 
-  document.getElementById(`message`).textContent = "🎉 You got it right!!!";
-  document.getElementById(`message`).style.color = `green`;
+  messageEl.textContent = "🎉 You got it right!!!";
+  messageEl.style.color = "white";
+  document.body.style.backgroundColor = `green`;
 
   document.getElementById(`secretNumber`).textContent = secretNumber;
 
   if (score > highestScore) setHighestScore(score);
 }
 
-function wrongAnswer(guess) {
+function wrongAnswer(guess, messageEl) {
   score--;
 
-  document.getElementById(`message`).style.color = `red`;
-  document.getElementById(`message`).textContent =
-    guess < secretNumber ? `Too LOW.` : `Too HIGH.`;
+  messageEl.style.color = `red`;
+  messageEl.textContent = guess < secretNumber ? `Too LOW.` : `Too HIGH.`;
 
   document.getElementById(`score`).textContent = score;
 
@@ -45,7 +46,9 @@ function wrongAnswer(guess) {
 
 function looseGame() {
   finished = true;
-  document.getElementById(`message`).textContent = "💥 You lost.";
+  document.body.style.backgroundColor = `red`;
+  messageEl.style.color = `white`;
+  messageEl.textContent = "💥 You lost.";
 }
 
 function setHighestScore(score) {
