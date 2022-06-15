@@ -143,6 +143,10 @@ header nav {
   font-size: 2.4rem;
 }
 
+.relative {
+  padding: 6.4rem 0;
+}
+
 hr {
   border: 5px solid #fff;
   display: inline-block;
@@ -200,14 +204,14 @@ input[type="number"]::-webkit-outer-spin-button {
 /* 768px = 48em */
 @media (max-width: 48em) {
   html {
-    font-size: 37.5%;
+    font-size: 42.5%;
   }
 }
 
 /* 650px = 41em */
 @media (max-width: 41em) {
   html {
-    font-size: 32.5%;
+    font-size: 37.5%;
   }
 
   header {
@@ -231,10 +235,13 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /* 425px = 26.5em */
 @media (max-width: 26.5em) {
-  html {
-    font-size: 25%;
+  header {
+    padding: 4.8rem 0 12rem 0;
   }
-
+  .grid {
+    row-gap: 9.6rem;
+    text-align: center;
+  }
   hr {
     width: 96.5rem;
   }
